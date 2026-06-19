@@ -13,16 +13,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Touchgress — Book Your Turf. Play Your Game.",
+  title: "Touchgrass — Book Your Turf. Play Your Game.",
   description:
-    "Find and book premium sports turfs for football and cricket near you. Join thousands of young athletes on the Touchgress waitlist.",
+    "Find and book premium sports turfs for football and cricket near you. Join thousands of young athletes on the Touchgrass waitlist.",
   keywords: [
     "turf booking",
     "sports",
     "football",
     "cricket",
     "book turf online",
-    "Touchgress",
+    "Touchgrass",
   ],
 };
 

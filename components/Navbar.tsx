@@ -35,7 +35,7 @@ export default function Navbar() {
         <span className="w-[30px] h-[30px] rounded-lg bg-dark grid place-items-center text-[13px] text-white font-bold">
           T
         </span>
-        Touchgress
+        Touchgrass
       </a>
 
       {/* Links */}

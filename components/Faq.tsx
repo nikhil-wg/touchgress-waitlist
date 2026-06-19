@@ -9,29 +9,29 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: "How does turf booking work on Touchgress?",
+    question: "How does turf booking work on Touchgrass?",
     answer:
       "Simply search for available turfs in your area, pick your preferred time slot, and book instantly. We handle the scheduling, payment, and confirmation so you can focus on playing.",
   },
   {
     question: "What sports can I book turfs for?",
     answer:
-      "At launch, Touchgress supports football and cricket turf bookings. We're actively working on adding more sports including badminton, tennis, and basketball in future updates.",
+      "At launch, Touchgrass supports football and cricket turf bookings. We're actively working on adding more sports including badminton, tennis, and basketball in future updates.",
   },
   {
     question: "Is the platform free to use?",
     answer:
-      "Signing up for Touchgress is completely free. You only pay for the turf bookings you make. We offer transparent pricing with no hidden fees or subscription costs.",
+      "Signing up for Touchgrass is completely free. You only pay for the turf bookings you make. We offer transparent pricing with no hidden fees or subscription costs.",
   },
   {
-    question: "When is Touchgress launching?",
+    question: "When is Touchgrass launching?",
     answer:
       "We're currently building the final version and onboarding turf partners across major cities. Join the waitlist to be notified as soon as we go live in your area — early members get exclusive perks.",
   },
   {
     question: "Can I book for a group or team?",
     answer:
-      "Absolutely! You can book for yourself or your entire team. Touchgress lets you split payments, send invites to teammates, and manage your squad's regular booking schedule.",
+      "Absolutely! You can book for yourself or your entire team. Touchgrass lets you split payments, send invites to teammates, and manage your squad's regular booking schedule.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function Faq() {
         Frequently asked questions
       </h2>
       <p className="font-serif text-[16px] leading-relaxed text-steel mb-10">
-        Everything you need to know about Touchgress and turf booking.
+        Everything you need to know about Touchgrass and turf booking.
       </p>
 
       <div>

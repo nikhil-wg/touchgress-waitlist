@@ -29,7 +29,7 @@ export default function CtaBanner() {
           Never miss a game again
         </h2>
         <p className="font-serif text-[16px] leading-relaxed text-white/55 max-w-[380px] mt-3">
-          Join the Touchgress waitlist and be the first to book premium turfs in
+          Join the Touchgrass waitlist and be the first to book premium turfs in
           your city.
         </p>
       </div>

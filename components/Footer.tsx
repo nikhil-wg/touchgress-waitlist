@@ -6,7 +6,7 @@ export default function Footer() {
         <span className="w-6 h-6 rounded-md bg-dark grid place-items-center text-[11px] text-white font-bold">
           T
         </span>
-        Touchgress
+        Touchgrass
       </div>
 
       {/* Links */}
@@ -25,7 +25,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <span className="font-code text-[11px] text-ash">
-        © {new Date().getFullYear()} Touchgress. All rights reserved.
+        © {new Date().getFullYear()} Touchgrass. All rights reserved.
       </span>
     </footer>
   );

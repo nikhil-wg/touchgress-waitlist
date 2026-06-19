@@ -4,30 +4,38 @@ import { useState, type FormEvent } from "react";
 
 export default function WaitlistForm() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
     setStatus("loading");
     
     try {
-      const response = await fetch("/api/waitlist", {
+      const response = await fetch("https://formspree.io/f/mnjyedye", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify({ email }),
       });
       
       if (response.ok) {
         setStatus("success");
+        setMessage("Thanks! You've been added to the waitlist.");
+        setEmail(""); // Clear input field
       } else {
-        setStatus("idle");
-        alert("Something went wrong. Please try again.");
+        setStatus("error");
+        setMessage("Something went wrong. Please try again.");
+        setTimeout(() => setStatus("idle"), 3000); // Reset after 3 seconds
       }
     } catch (error) {
       console.error("Error:", error);
-      setStatus("idle");
-      alert("Something went wrong. Please try again.");
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+      setTimeout(() => setStatus("idle"), 3000); // Reset after 3 seconds
     }
   };
 
@@ -38,7 +46,20 @@ export default function WaitlistForm() {
           ✓
         </span>
         <p className="font-display text-sm font-medium text-[#065f46]">
-          You&apos;re on the list! We&apos;ll be in touch soon.
+          {message}
+        </p>
+      </div>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <div className="flex items-center gap-3 px-6 py-4 rounded-pill animate-fade-up bg-[#fee2e2]">
+        <span className="w-5 h-5 rounded-full bg-[#ef4444] text-white grid place-items-center text-xs font-bold">
+          !
+        </span>
+        <p className="font-display text-sm font-medium text-[#991b1b]">
+          {message}
         </p>
       </div>
     );
@@ -47,11 +68,14 @@ export default function WaitlistForm() {
   return (
     <form
       onSubmit={handleSubmit}
+      method="POST"
+      action="https://formspree.io/f/mnjyedye"
       className="flex items-center gap-0 p-1.5 bg-snow rounded-pill border border-silver/60 max-w-md w-full"
       style={{ boxShadow: "0 4px 20px rgba(0,0,0,.08)" }}
     >
       <input
         type="email"
+        name="email"
         required
         id="waitlist-email"
         value={email}
